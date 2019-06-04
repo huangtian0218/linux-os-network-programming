@@ -28,7 +28,7 @@ int main()
 	write(fd, (void *)"hello", 3);
 
 	//移动光标至文件头部
-	lseek(fd, SEEK_SET, 0);
+	lseek(fd, 0, SEEK_SET);
 
 	char buf[30] = {0};
 	read(fd, buf, 30);
