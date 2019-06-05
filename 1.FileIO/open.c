@@ -17,6 +17,7 @@ int main()
 	
 	//O_CREAT: 打开时不存在则创建
 	//O_EXCL: 和O_CREAT搭配使用，打开文件时之前存在报错，保证每次open的都是新文件
+	//open如果有第三个参数表示新创建文件的默认权限
 	//fd = open("./1.txt", O_RDWR | O_CREAT, 0664);
 
 	if(-1 == fd)
