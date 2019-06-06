@@ -38,7 +38,17 @@ int main(int argc, char* argv[])
 		else
 			perm[i] = '-';
 	}
-	printf("%c%s %ld %d %d %ld %ld %s\n", mode, perm, s.st_nlink, s.st_uid, s.st_gid, s.st_size, s.st_atime, argv[1]);
+
+	if(mode == 'l')
+	{
+		char buf[30] = {0};
+		readlink(argv[1], buf, sizeof(buf));
+		printf("%c%s %ld %d %d %ld %ld %s --> %s\n", mode, perm, s.st_nlink, s.st_uid, s.st_gid, s.st_size, s.st_atime, argv[1], buf);
+	}
+	else
+	{
+		printf("%c%s %ld %d %d %ld %ld %s\n", mode, perm, s.st_nlink, s.st_uid, s.st_gid, s.st_size, s.st_atime, argv[1]);
+	}
 
 	return 0;
 }
