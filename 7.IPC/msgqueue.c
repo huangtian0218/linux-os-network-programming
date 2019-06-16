@@ -24,6 +24,7 @@ void signal_fun(int signo)
 {
 	//删除消息队列
 	msgctl(msgid, IPC_RMID, NULL);
+	remove(MSG_FILE);
 	exit(-1);
 }
 
