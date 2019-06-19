@@ -3,7 +3,9 @@
 
 int main()
 {
+	//fork之前的代码子进程只复制，但不会执行，只有父进程会执行
 	printf("before fork...\n");
+
 	pid_t ret = fork();
 	if(ret > 0)
 	{
