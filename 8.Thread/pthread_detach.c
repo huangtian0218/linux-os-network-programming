@@ -79,7 +79,7 @@ int main()
 		}
 	}
 
-	//定时5秒，时间到后取消次线程
+	//定时3秒，时间到后取消次线程
 	signal(SIGALRM, signal_fun);
 	alarm(3);
 
