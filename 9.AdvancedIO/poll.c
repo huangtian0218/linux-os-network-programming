@@ -56,7 +56,7 @@ label:	ret = poll(fds, 2, 3000);
 				ret = read(fds[1].fd, &coor, sizeof(coor));
 				if(ret > 0)
 				{
-					printf("mouse = %d", coor);
+					printf("mouse = %d\n", coor);
 				}
 			}
 		}

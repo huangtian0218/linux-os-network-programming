@@ -20,7 +20,7 @@ void signal_fun(int signo)
 		ret = read(mousefd, &coor, sizeof(coor));	
 		if(ret > 0)
 		{
-			printf("mouse = %d", coor);
+			printf("mouse = %d\n", coor);
 		}
 	}
 }

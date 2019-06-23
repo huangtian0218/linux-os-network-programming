@@ -13,7 +13,6 @@ int main()
 	int coor = -1;
 	int flag = -1;
 
-#if 0
 	//读鼠标需要sudo ./a.out
 	mousefd = open("/dev/input/mouse0", O_RDONLY|O_NONBLOCK);
 	if(mousefd == -1)
@@ -21,7 +20,6 @@ int main()
 		perror("open mouse failed!!!");
 		return -1;
 	}
-#endif
 
 	//重新设置fd=0的标志位
 	//fcntl(0, F_SETFL, O_RDONLY|O_NONBLOCK);
@@ -36,15 +34,14 @@ int main()
 		ret = read(0, buf, sizeof(buf));
 		if(ret > 0)
 		{
-			printf("%s", buf);
+			printf("keyboard = %s", buf);
 		}
-#if 0
+
 		ret = read(mousefd, &coor, sizeof(coor));
 		if(ret > 0)
 		{
-			printf("%u\n", coor);
+			printf("mouse = %d\n", coor);
 		}
-#endif
 	}
 
 	return 0;
