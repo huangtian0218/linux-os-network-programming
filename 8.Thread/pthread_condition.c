@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <signal.h>
 
 static int va;
 static pthread_cond_t cond;	//定义条件变量
